@@ -5,9 +5,73 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://picsum.photos/1600/900");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  font-size: larger;
+  font-weight: 700;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    
+}
+.center{
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  margin-top: 200px;
+}
+.mainheader{
+  width: 650px;
+  height: 80px;
+}
+.header{
+  width: 650px;
+  height: 60px;
+}
+.divform{
+  width: 650px;
+  height: 300px;
+}
+.inputbox{
+  background-color: whitesmoke;
+  height: 60px;
+  border: none;
+  margin-right: 180px;
+}
+.box{
+  border: 1px solid black;
+  margin: auto;
+  width: 450px;
+  margin-top: 7px;
+  background-color: whitesmoke;
+}
+
+
+.button{
+  width: 450px;
+}
+.headercontacts{
+  width: 650px;
+  height: 60px;
+  margin-top: 50px;
+}
+table{
+  width: 650px;
+  height:250px;
+  
+}
+table th{
+  color:red;
+  padding:15px
+}
+table td{
+  padding: 15px;
+}
+table tr button{
+  border: none;
 }
