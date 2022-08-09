@@ -83,4 +83,4 @@ Build a FireContact App using ReactJS.
 
 ## My Solution
 
-https://firecontact-app-ahmet-nuri.netlify.app
+https://fire-contact-app-ahmetnuri.netlify.app
