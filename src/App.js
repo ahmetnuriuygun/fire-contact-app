@@ -1,56 +1,42 @@
-import React from 'react'
-import Form from './components/Form'
-import Header from './components/Header'
-import ShowList from './components/ShowList'
-import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from 'react'
-import { ToastContainer } from 'react-toastify';
+
+import './App.css';
+import FormComponent from './components/form/FormComponent';
+import Contacts from './components/contacts/Contacts'
+import { useState } from 'react';
+import {AddUser,UpdateUser} from "./utils/functions"
+import {ToastContainer} from "react-toastify"
+
+const initialValues={username:"",phoneNumber:"",gender:""}
+
+function App() {
+  const [info,setInfo]=useState(initialValues);
+  const [isAdd,setIsAdd]=useState("ADD")
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+  if(info.id){
+    UpdateUser(info)
+  }
+  else{
+    AddUser(info)
+    setIsAdd("ADD")
+  }
+
+   
+  }
 
 
-const App = () => {
+  const EditUser=(id,username,phoneNumber,gender)=>{
+    setInfo({id,username,phoneNumber,gender})
+    setIsAdd("UPDATE")
 
-  
-
-  const [name,setName] = useState()
-  const [phone,setPhone] = useState()
-  const [gender,setGender] = useState()
-  const [id,setId] = useState("")
-  const [edit,setEdit] =useState(false)
-
-
+  }
   return (
-    <div className='d-flex justify-content-around center'>
-    <div className='d-flex flex-column'>
-      <Header/>
-      <Form 
-          edit={edit}
-          setEdit={setEdit}
-          name={name}
-          setName={setName}
-          phone={phone}
-          gender={gender}
-          setPhone={setPhone}
-          setGender={setGender}
-          id={id} 
-      />
-    </div>
-      
-      <ShowList
-          edit={edit}
-          setEdit={setEdit}
-          name={name}
-          setName={setName}
-          phone={phone}
-          gender={gender}
-          setPhone={setPhone}
-          setGender={setGender}
-          id={id}
-          
-      />
+    <div className="App">
+      <FormComponent info={info} setInfo={setInfo} handleSubmit={handleSubmit} isAdd={isAdd}/>
+      <Contacts EditUser={EditUser}/>
       <ToastContainer/>
     </div>
-
-  )
+  );
 }
 
-export default App
+export default App;
